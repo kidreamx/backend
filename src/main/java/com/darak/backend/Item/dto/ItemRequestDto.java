@@ -2,7 +2,10 @@ package com.darak.backend.Item.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 public class ItemRequestDto {
     private String item_name;

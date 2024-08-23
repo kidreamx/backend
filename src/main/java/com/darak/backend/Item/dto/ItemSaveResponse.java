@@ -7,6 +7,8 @@ import lombok.Setter;
 
 
 @AllArgsConstructor
+@Getter
+@NoArgsConstructor
 public class ItemSaveResponse {
     private String code;
 }

@@ -22,7 +22,7 @@ public class Join {
     private String storeName;
 
     @ManyToOne//
-    @MapKey
+    @MapsId
     @JoinColumns({
             @JoinColumn(name = "item_name", referencedColumnName = "item_name"),
             @JoinColumn(name = "store_name", referencedColumnName = "store_name")
@@ -35,6 +35,9 @@ public class Join {
     @Column(name = "join_limit")
     private int joinLimit;
 
+    @Column(name = "join_people_count")
+    private int joinPeopleCount;
+
     @Column(name = "join_percent")
     private int joinPercent;
 
@@ -44,7 +47,7 @@ public class Join {
     @Column(name = "join_end_day")
     private String joinEndDay;
 
-    public void changeJoinLimit(int newJoinLimit) {
-        this.joinLimit = newJoinLimit;
+    public void changeJoinPeopleCount(int newJointPeopleCount) {
+        this.joinPeopleCount = newJointPeopleCount;
     }
 }

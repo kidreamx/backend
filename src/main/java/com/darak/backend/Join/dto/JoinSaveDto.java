@@ -1,7 +1,6 @@
 package com.darak.backend.Join.dto;
 
-import com.darak.backend.Item.entity.Item;
-import lombok.AllArgsConstructor;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

@@ -11,6 +11,7 @@ public class JoinResponseDto {
     private String storeName;
     private int joinPrice;
     private int joinLimit;
+    private int joinPersonCount;
     private int joinPercent;
     private String joinStartDay;
     private String joinEndDay;
