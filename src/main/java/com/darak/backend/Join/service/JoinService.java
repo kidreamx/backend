@@ -58,6 +58,13 @@ public class JoinService {
         Optional<Join> join =joinRepository.findByItem_ItemNameAndItem_StoreName(
                 joinRequestDto.getItemName(), joinRequestDto.getStoreName());
         Join join1 = join.get();
-        join1.changeJoinPeopleCount(join1.getJoinPeopleCount()+1);
+        if(join1.getJoinPeopleCount()<join1.getJoinLimit()) {
+            join1.changeJoinPeopleCount(join1.getJoinPeopleCount()+1);
+        }
+        else{
+            throw new Exception("꺼져 이제 수량 없음");
+        }
+
+
     }
 }

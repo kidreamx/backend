@@ -8,7 +8,6 @@ import lombok.*;
 @Entity
 @Builder
 @AllArgsConstructor
-
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "ITEMS")
 public class Item {

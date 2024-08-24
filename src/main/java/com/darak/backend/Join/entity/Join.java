@@ -21,7 +21,7 @@ public class Join {
     @Column(name = "store_name")
     private String storeName;
 
-    @ManyToOne//
+    @ManyToOne
     @MapsId
     @JoinColumns({
             @JoinColumn(name = "item_name", referencedColumnName = "item_name"),
