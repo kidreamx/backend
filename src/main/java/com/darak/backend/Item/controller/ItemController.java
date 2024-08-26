@@ -20,6 +20,7 @@ public class ItemController {
     private final ItemService itemService;
     private final JoinService joinService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/save")
     public ResponseEntity<ItemSaveResponse> save(@RequestBody ObjectNode saveObj) throws Exception , JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
@@ -29,7 +30,7 @@ public class ItemController {
         joinService.Join_Save(joinSaveDto);
         return ResponseEntity.ok(new ItemSaveResponse("아이템 및 공구 정보 저장이 완료되었습니다!"));
     }
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/call/{item_name}")
     public ResponseEntity<ItemRequestDto> getItem(@RequestBody @PathVariable String item_name) throws Exception {
         ItemRequestDto itemRequestDto = itemService.Item_Select(item_name);

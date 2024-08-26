@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/join")
 public class JoinController {
 
     private final JoinService joinService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PatchMapping("/buy")
     public ResponseEntity<JoinResponseDto> plusJoinPerson(@RequestBody JoinRequestDto joinRequestDto) throws Exception {
         joinService.join_people_update(joinRequestDto);
@@ -23,7 +25,8 @@ public class JoinController {
         return ResponseEntity.ok(joinResponseDto);
     }
 
-    @GetMapping("/call/info")
+    @CrossOrigin(origins = "http://localhost:3000")
+    @PostMapping("/call/info")
     public ResponseEntity<JoinResponseDto> joinSelect(@RequestBody JoinRequestDto joinRequestDto) throws Exception {
         JoinResponseDto joinResponseDto = joinService.Join_select(joinRequestDto);
         return ResponseEntity.ok(joinResponseDto);
